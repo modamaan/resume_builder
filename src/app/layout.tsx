@@ -1,6 +1,7 @@
 import "globals.css";
 import { TopNavBar } from "components/TopNavBar";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "components/GoogleAnalytics";
 
 export const metadata = {
   title: "ResumeStudio - Professional Resume Builder & ATS Parser",
@@ -19,6 +20,9 @@ export default function RootLayout({
         <TopNavBar />
         {children}
         <Analytics />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
