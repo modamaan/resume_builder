@@ -2,6 +2,7 @@ import "globals.css";
 import { TopNavBar } from "components/TopNavBar";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "components/GoogleAnalytics";
+import { FloatingBuyMeCoffee } from "components/BuyMeCoffeeButton";
 
 export const metadata = {
   title: "ResumeStudio - Professional Resume Builder & ATS Parser",
@@ -23,6 +24,8 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        {/* Floating Buy Me a Coffee Button */}
+        <FloatingBuyMeCoffee username={process.env.NEXT_PUBLIC_BMC_USERNAME || "yourusername"} />
       </body>
     </html>
   );

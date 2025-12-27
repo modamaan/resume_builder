@@ -1,4 +1,5 @@
 import { Link } from "components/documentation";
+import { BuyMeCoffeeButton } from "components/BuyMeCoffeeButton";
 
 const QAS = [
   {
@@ -48,30 +49,27 @@ const QAS = [
           discrimination. It offers only the core sections, e.g. profile, work
           experience, education, and skills, while omitting unnecessary sections
           like references. Additionally, ResumeStudio uses a top-down
-          single column resume design as opposed to two column design, because
-          single column design works best for ATS. <br />{" "}
+          single-column resume design, which is recommended by ATS and
+          recruitment experts for maximum readability and ATS compatibility.
         </p>
         <p>
           <span className="font-semibold">
-            2. ResumeStudio is privacy-focused.
-          </span>{" "}
+            2. ResumeStudio is completely free with no sign-up required and 100% private.
+          </span>
           <br />
-          Your resume data remains private and accessible only on your local machine.
-          ResumeStudio doesn't require sign up to use the app, and all inputted
-          data is stored in your browser that only you have access to.
+          Your resume data never leaves your browser and is stored locally on your device.
+          We don't collect any personal information or track what you build.
         </p>
       </>
     ),
   },
   {
-    question: "Q3. Is my data safe with ResumeStudio?",
+    question: "Q3. Who created ResumeStudio?",
     answer: (
       <p>
-        Absolutely. ResumeStudio stores all your resume data locally in your browser's
-        storage. We never send your personal information to our servers. This means
-        your data is completely private and under your control. You can export your
-        resume as a PDF at any time, and your data persists in your browser for future
-        editing sessions.
+        ResumeStudio is built and maintained by developers who believe everyone deserves
+        access to professional resume tools. If you find this tool helpful, consider
+        supporting its development!
       </p>
     ),
   },
@@ -90,6 +88,23 @@ export const QuestionsAndAnswers = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Support Section */}
+      <div className="mt-8 rounded-xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50 p-6 text-center sm:p-8">
+        <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">
+          ☕ Enjoying ResumeStudio?
+        </h3>
+        <p className="mb-6 text-sm text-gray-700 sm:text-base">
+          ResumeStudio is free and always will be. If you find it helpful,
+          consider buying me a coffee to support development!
+        </p>
+        <div className="flex justify-center">
+          <BuyMeCoffeeButton username={process.env.NEXT_PUBLIC_BMC_USERNAME || ""} />
+        </div>
+        <p className="mt-4 text-xs text-gray-500">
+          Your support helps keep ResumeStudio free for everyone 💜
+        </p>
       </div>
     </section>
   );
